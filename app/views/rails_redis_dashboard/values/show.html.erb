@@ -1,0 +1,38 @@
+<%= link_to rrd_root_path do %>
+  back to list
+<% end %>
+
+<p>
+  key: <%= @key %>
+</p>
+
+<p>
+  type: <%= @type %>
+</p>
+
+<p>
+  value: <%= @value %>
+</p>
+
+<% if @parsed_value %>
+  <div>
+    parsed:
+    <div style="white-space: pre">
+      <%= @parsed_value.pretty_inspect %>
+    </div>
+  </div>
+<% end %>
+
+<p>
+  ttl: <%= @ttl %>
+  <% if @ttl.present? %>
+    <br/>
+    at: <%= @ttl.to_i.seconds.since(Time.current).iso8601 %>
+  <% end %>
+</p>
+
+<div>
+  <%= form_with(url: expire_value_path(@key), local: true, method: :get) do |f| %>
+    <%= f.submit :expire_this_key %>
+  <% end %>
+</div>

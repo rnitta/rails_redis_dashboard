@@ -1,0 +1,13 @@
+<%= form_with(url: '', local: true, method: :get) do |f| %>
+  <%= f.text_field :key, value: @filter_key %>
+  <%= f.submit :filter %>
+<% end %>
+<ul>
+  <% @keys.each do |key| %>
+    <li>
+      <%= link_to value_path(key) do %>
+        <%= key %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

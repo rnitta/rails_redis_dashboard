@@ -64,9 +64,8 @@ and
 
 ```ruby
 require "rails_redis_dashboard/engine"
-constraints UserConstraint do
-  mount RailsRedisDashboard::Engine, at: "/redis"
-end
+
+mount RailsRedisDashboard::Engine, at: "/redis", constraints: UserConstraint.new
 ```
 
 ↓↓ NOT IMPLEMENTED YET ↓↓

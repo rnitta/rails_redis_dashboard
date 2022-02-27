@@ -14,7 +14,7 @@ Differentiates from another rails redis dashboard gems are:
 Add this line to your application's Gemfile:
 
 ```ruby
-gem "rails_redis_dashboard", git: 'https://github.com/rnitta/rails_redis_dashboard'
+gem "rails_redis_dashboard", git: 'https://github.com/rnitta/rails_redis_dashboard.git', branch: :main
 ```
 
 And then execute:

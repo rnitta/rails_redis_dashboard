@@ -11,7 +11,7 @@ module RailsRedisDashboard
                     else
                       '*'
                     end
-      @keys = RailsRedisDashboard::config.redis_current.keys(@filter_key)
+      @keys = RailsRedisDashboard::config.redis_current.keys(@filter_key).sort
     end
   end
 end

@@ -18,7 +18,7 @@
   <div>
     parsed:
     <div style="white-space: pre">
-      <%= @parsed_value.pretty_inspect %>
+      <%= require('pp').then { @parsed_value.pretty_inspect } %>
     </div>
   </div>
 <% end %>
